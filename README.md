@@ -40,6 +40,11 @@ StudentHub/
 │── css/style.css
 │── images/
 ```
+
+## 🚀 How to Run
+1. Open the project folder.
+2. Open `index.html` in your browser or Live Server.
+
 ## 👩‍💻 Developer
 **Dhruvi Mokani**  
 **B.Tech Computer Science & Engineering**  
