@@ -5,7 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Hub | Home</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+.slider {
+    width: 600px;
+    margin: 25px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.slider img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slider button {
+    background-color: #348599;
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    font-size: 28px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.slider button:hover {
+    background-color: #555;
+}
+    </style>
 </head>
+
 <body>
 
 <header>
@@ -13,37 +47,76 @@
     <h1>Student Hub</h1>
     <p>Your Academic Management Portal</p>
 </header>
+
 <hr>
+
 <nav>
-    <a href="index.html">Home</a> 
+    <a href="index.html">Home</a>
     <a href="login.html">Login</a>
-    <a href="about.html">About Us</a> 
-    <a href="contact.html">Contact Us</a> 
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
     <a href="faq.html">FAQ</a>
-</nav> <hr> <main>
-<section >
-    <h2>Welcome to Student Hub</h2>
-    <p>Student Hub is a secure online portal that helps students manage their academic activities in one place.</p>
-    <p>After logging in, students can access their dashboard, attendance, assignments, timetable, announcements, results, and fee details.</p>
-    <img src="" alt="Students" width="500">
-    <br><br>
-    <a href="login.html">
-        <button id="mybutton" >Login to Continue</button>
-    </a>
-</section>
+</nav>
+
 <hr>
-<section>
-    <h2>Latest Notice</h2>
-    <marquee scrollamount="8">
-        📢 Welcome to Student Hub! Please log in using your Student ID and Password.
-    </marquee>
-</section>
+
+<main>
+
+    <section>
+        <h2>Welcome to Student Hub</h2>
+
+        <p>
+            Student Hub is a secure online portal that helps students
+            manage their academic activities in one place.
+        </p>
+
+        <p>
+            After logging in, students can access their dashboard,
+            attendance, assignments, timetable, announcements,
+            results, and fee details.
+        </p>
+
+        <!-- Image Slider -->
+        <div class="slider">
+
+            <button onclick="previousImage()">&lt;</button>
+
+            <img id="sliderImage"
+                 src="Photo/student3.png"
+                 alt="Student Activities">
+
+            <button onclick="nextImage()">&gt;</button>
+
+        </div>
+
+        <br>
+
+        <a href="login.html" >
+            <button id="mybutton" style="text-align: center;">Login to Continue</button>
+        </a>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Latest Notice</h2>
+
+        <marquee scrollamount="8">
+            📢 Welcome to Student Hub! Please log in using your Student ID and Password.
+        </marquee>
+    </section>
+
 </main>
+
 <hr>
+
 <footer>
     <p><strong>Student Hub</strong></p>
     <p>Email: support@studenthub.com</p>
     <p>© 2026 Student Hub. All Rights Reserved.</p>
 </footer>
+
+<script src="js/script.js"></script>
+
 </body>
 </html>

@@ -27,21 +27,24 @@
         <p>Find answers to the most commonly asked questions about Student Hub.</p>
     </section>
     <section>
-        <h3>Common Questions</h3>
-        <p><strong>Q1. How do I log in?</strong></p>
-        <p>Use your Student ID and Password to log in.</p>
-        <br>
-        <p><strong>Q2. How can I check my attendance?</strong></p>
-        <p>Open the Attendance page from the Dashboard.</p>
-        <br>
-        <p><strong>Q3. Where can I view my assignments?</strong></p>
-        <p>Go to the Assignments page after logging in.</p>
-        <br>
-        <p><strong>Q4. How do I check my results?</strong></p>
-        <p>Click on the Results option from the Dashboard.</p>
-        <br>
-        <p><strong>Q5. How can I submit feedback?</strong></p>
-        <p>Open the Feedback page, fill out the form, and click Submit.</p>
+       <section style="width: 100%; ">
+    <h3>Common Questions</h3>
+
+    <button onclick="toggleAnswer('a1')">Q1. How do I log in?</button><br>
+    <p id="a1" style="display:none;">Use your Student ID and Password to log in.</p>
+
+    <button onclick="toggleAnswer('a2')">Q2. How can I check my attendance?</button><br>
+    <p id="a2" style="display:none;">Open the Attendance page from the Dashboard.</p>
+
+    <button onclick="toggleAnswer('a3')">Q3. Where can I view my assignments?</button><br>
+    <p id="a3" style="display:none;">Go to the Assignments page after logging in.</p>
+
+    <button onclick="toggleAnswer('a4')">Q4. How do I check my results?</button><br>
+    <p id="a4" style="display:none;">Click on the Results option from the Dashboard.</p>
+
+    <button onclick="toggleAnswer('a5')">Q5. How can I submit feedback?</button><br>
+    <p id="a5" style="display:none;">Open the Feedback page, fill out the form, and click Submit.</p>
+</section>
     </section>
     <section>
         <h3>Still Have a Question?</h3>
@@ -61,5 +64,6 @@
     <p>Email: support@studenthub.com</p>
     <p>&copy; 2026 Student Hub. All Rights Reserved.</p>
 </footer>
+<script src="js/script.js"></script>
 </body>
 </html>
