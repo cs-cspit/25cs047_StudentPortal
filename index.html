@@ -7,36 +7,97 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
-.slider {
-    width: 600px;
-    margin: 25px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-}
+        /* Image Slider */
+        .slider {
+            width: 600px;
+            margin: 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
 
-.slider img {
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+        .slider img {
+            width: 500px;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
 
-.slider button {
-    background-color: #348599;
+        .slider button {
+            background-color: #348599;
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            font-size: 28px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .slider button:hover {
+            background-color: #555;
+        }
+
+        /* Notification Banner */
+        .notification {
+            background-color: #358a9a;
+            border: 1px solid #245e6d;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 5px;
+            position: relative;
+            color: white;
+        }
+
+       .notification button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: none;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    }
+    .notification button:hover {
+    color: red;
+}
+    /* Hamburgur Menu */
+      .menu-btn {
+    display: none;
+    background: #348599;
     color: white;
     border: none;
-    width: 45px;
-    height: 45px;
-    font-size: 28px;
+    font-size: 25px;
+    padding: 6px 12px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 50%;
 }
-
-.slider button:hover {
-    background-color: #555;
-}
+        /* Mobile Menu */
+        @media (max-width: 600px) {
+            .menu-btn {
+                display: block;
+            }
+            nav {
+                display: none;
+            }
+            nav.show {
+                display: block;
+            }
+            nav a {
+                display: block;
+                margin: 10px;
+            }
+            .slider {
+                width: 100%;
+            }
+            .slider img {
+                width: 75%;
+                height: 220px;
+            }
+        }
     </style>
 </head>
 
@@ -46,11 +107,14 @@
     <img src="Photo/logo.png" alt="Student Hub Logo" width="70" height="70">
     <h1>Student Hub</h1>
     <p>Your Academic Management Portal</p>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
 </header>
 
 <hr>
 
-<nav>
+<nav id="navbar">
     <a href="index.html">Home</a>
     <a href="login.html">Login</a>
     <a href="about.html">About Us</a>
@@ -61,6 +125,13 @@
 <hr>
 
 <main>
+
+    <!-- Notification Banner -->
+    <div id="notification" class="notification">
+        📢 Welcome to Student Hub! Please log in using your Student ID and Password.
+        Check the Announcement page for recent Updates!!📢
+        <button onclick="closeNotification()">×</button>
+    </div>
 
     <section>
         <h2>Welcome to Student Hub</h2>
@@ -78,7 +149,6 @@
 
         <!-- Image Slider -->
         <div class="slider">
-
             <button onclick="previousImage()">&lt;</button>
 
             <img id="sliderImage"
@@ -86,13 +156,12 @@
                  alt="Student Activities">
 
             <button onclick="nextImage()">&gt;</button>
-
         </div>
 
         <br>
 
-        <a href="login.html" >
-            <button id="mybutton" style="text-align: center;">Login to Continue</button>
+        <a href="login.html">
+            <button id="mybutton">Login to Continue</button>
         </a>
     </section>
 
@@ -116,7 +185,14 @@
     <p>© 2026 Student Hub. All Rights Reserved.</p>
 </footer>
 
+
 <script src="js/script.js"></script>
+<script>
+    // Hamburger Menu
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+}
+</script>
 
 </body>
 </html>
