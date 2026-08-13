@@ -130,7 +130,7 @@ background:#FAFCFD;
 
 input:focus,select:focus,textarea:focus{
 outline:2px solid #76B6C9;
-border-color:#4389A8;
+border-color:#da3535;
 background:white;
 }
 
@@ -419,3 +419,21 @@ width:100%;
             border-radius: 5px;
             cursor: pointer;
         }
+
+       /* Dark Theme */
+body.dark {
+    background-color: #222;
+    /* color: white; */
+}
+
+body.dark nav {
+    background-color: #222;
+}
+
+body.dark nav a {
+    color: white;
+}
+
+body.dark nav a:hover {
+    color: #348599;
+}
