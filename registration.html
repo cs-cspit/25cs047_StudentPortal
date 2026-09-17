@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Student Registration</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+<h1>Student Registration</h1>
+<p>Create your student account</p>
+<button id="themeBtn" onclick="toggleTheme()">🌙 Dark</button>
+</header>
+
+<main>
+<div class="container">
+
+<form id="registrationForm" novalidate>
+
+<div class="form-group">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="name" aria-describedby="nameError">
+<span class="error" id="nameError"></span>
+</div>
+
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" aria-describedby="emailError">
+<span class="error" id="emailError"></span>
+</div>
+
+<div class="form-group">
+<label for="mobile">Mobile Number</label>
+<input type="tel" id="mobile" name="mobile" placeholder="Enter 10-digit mobile number" maxlength="10" inputmode="numeric" aria-describedby="mobileError">
+<span class="error" id="mobileError"></span>
+</div>
+
+<div class="form-group">
+<label for="password">Password</label>
+<input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="new-password" aria-describedby="passwordError strengthText">
+
+<div class="strength-container">
+<div id="strengthBar"></div>
+</div>
+
+<small id="strengthText">Password strength: Not entered</small>
+<span class="error" id="passwordError"></span>
+</div>
+
+<div class="form-group">
+<label for="confirmPassword">Confirm Password</label>
+<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password" autocomplete="new-password" aria-describedby="confirmPasswordError">
+<span class="error" id="confirmPasswordError"></span>
+</div>
+
+<div class="form-group">
+<label for="course">Course</label>
+<select id="course" name="course" aria-describedby="courseError">
+<option value="">Select Course</option>
+<option value="B.Tech CSE">B.Tech CSE</option>
+<option value="B.Tech IT">B.Tech IT</option>
+<option value="B.Tech CE">B.Tech CE</option>
+<option value="BCA">BCA</option>
+<option value="MCA">MCA</option>
+</select>
+<span class="error" id="courseError"></span>
+</div>
+
+<div class="form-group">
+<label for="year">Year</label>
+<select id="year" name="year" aria-describedby="yearError">
+<option value="">Select Year</option>
+<option value="First Year">First Year</option>
+<option value="Second Year">Second Year</option>
+<option value="Third Year">Third Year</option>
+<option value="Fourth Year">Fourth Year</option>
+</select>
+<span class="error" id="yearError"></span>
+</div>
+
+<fieldset>
+<legend>Gender</legend>
+
+<div class="gender-options">
+<label>
+<input type="radio" name="gender" value="Male">
+Male
+</label>
+
+<label>
+<input type="radio" name="gender" value="Female">
+Female
+</label>
+
+<label>
+<input type="radio" name="gender" value="Other">
+Other
+</label>
+</div>
+
+<span class="error" id="genderError"></span>
+</fieldset>
+
+<div class="terms">
+<label>
+<input type="checkbox" id="terms" name="terms" aria-describedby="termsError">
+I agree to the Terms and Conditions.
+</label>
+<span class="error" id="termsError"></span>
+</div>
+
+<button type="submit">Register</button>
+
+<p id="successMessage" class="success"></p>
+
+</form>
+</div>
+</main>
+
+<footer>
+<p>© 2026 Student Registration Portal</p>
+</footer>
+
+<script src="js/prac5.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
