@@ -23,66 +23,62 @@
         <a href="login.html">Login</a>
         <a href="about.html">About Us</a>
         <a href="contact.html">Contact Us</a>
-        <a href="faq.html">FAQ</a>
+        <a href="FQA.html">FAQ</a>
     </nav>
 
     <hr>
 
     <main>
+
         <h2>Upcoming Events</h2>
 
-        <!-- Event 1 -->
-        <fieldset>
-            <legend><b>💻 Hackathon 2026</b></legend>
-            <p>Date : 20 August 2026</p>
-            <p>Venue : CSPIT Auditorium</p>
+        <!-- Search, Filter and Sort -->
+        <div class="event-controls">
 
-            <button class="detailsBtn"
-                data-title="Hackathon 2026"
-                data-date="20 August 2026"
-                data-venue="CSPIT Auditorium"
-                data-description="Join the Hackathon 2026 and showcase your innovative ideas, coding skills and creativity.">
-                View Details
-            </button>
-        </fieldset>
+            <input
+                type="text"
+                id="searchEvent"
+                placeholder="Search event..."
+            >
 
-        <br>
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Technical">Technical</option>
+                <option value="Cultural">Cultural</option>
+                <option value="Sports">Sports</option>
+                <option value="Workshop">Workshop</option>
+            </select>
 
-        <!-- Event 2 -->
-        <fieldset>
-            <legend><b>🎤 Tech Talk</b></legend>
-            <p>Date : 25 August 2026</p>
-            <p>Venue : Seminar Hall</p>
+            <select id="sortEvent">
+                <option value="dateAsc">Date: Earliest First</option>
+                <option value="dateDesc">Date: Latest First</option>
+                <option value="name">Name: A-Z</option>
+            </select>
 
-            <button class="detailsBtn"
-                data-title="Tech Talk"
-                data-date="25 August 2026"
-                data-venue="Seminar Hall"
-                data-description="Learn about the latest technologies, industry trends and career opportunities from experienced professionals.">
-                View Details
-            </button>
-        </fieldset>
+        </div>
 
-        <br>
+        <!-- Loading Message -->
+        <p id="loadingMessage">Loading events...</p>
 
-        <!-- Event 3 -->
-        <fieldset>
-            <legend><b>🏆 Coding Competition</b></legend>
-            <p>Date : 2 September 2026</p>
-            <p>Venue : Programming Lab</p>
+        <!-- Events will come here from JSON -->
+        <div id="eventList"></div>
 
-            <button class="detailsBtn"
-                data-title="Coding Competition"
-                data-date="2 September 2026"
-                data-venue="Programming Lab"
-                data-description="Test your programming and problem-solving skills by participating in an exciting coding competition.">
-                View Details
-            </button>
-        </fieldset>
+        <!-- Pagination -->
+        <div class="event-pagination">
 
-        <!-- Modal Popup -->
+            <button id="prevBtn">Previous</button>
+
+            <span id="pageInfo">Page 1</span>
+
+            <button id="nextBtn">Next</button>
+
+        </div>
+
+        <!-- Modal -->
         <div id="eventModal" class="modal">
+
             <div class="modal-content">
+
                 <span class="close">&times;</span>
 
                 <h2 id="modalTitle"></h2>
@@ -97,11 +93,19 @@
                     <span id="modalVenue"></span>
                 </p>
 
+                <p>
+                    <b>Category:</b>
+                    <span id="modalCategory"></span>
+                </p>
+
                 <p id="modalDescription"></p>
 
                 <button id="closeBtn">Close</button>
+
             </div>
+
         </div>
+
     </main>
 
     <hr>
@@ -111,33 +115,9 @@
         <p>Email: support@studenthub.com</p>
         <p>© 2026 Student Hub. All Rights Reserved.</p>
     </footer>
-<script src="js/script.js"></script>
-    <script>
-        const modal = document.getElementById("eventModal");
 
-        document.querySelectorAll(".detailsBtn").forEach(button => {
-            button.onclick = () => {
-                modalTitle.textContent = button.dataset.title;
-                modalDate.textContent = button.dataset.date;
-                modalVenue.textContent = button.dataset.venue;
-                modalDescription.textContent = button.dataset.description;
-                modal.style.display = "block";
-            };
-        });
-
-        function closeModal() {
-            modal.style.display = "none";
-        }
-
-        document.querySelector(".close").onclick = closeModal;
-        document.getElementById("closeBtn").onclick = closeModal;
-
-        window.onclick = event => {
-            if (event.target === modal) {
-                closeModal();
-            }
-        };
-    </script>
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/event.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,107 @@
+[
+    {
+        "name": "💻 Hackathon 2026",
+        "category": "Technical",
+        "date": "2026-08-20",
+        "venue": "CSPIT Auditorium",
+        "description": "Join the Hackathon 2026 and showcase your innovative ideas, coding skills and creativity."
+    },
+    {
+        "name": "🎤 Tech Talk",
+        "category": "Technical",
+        "date": "2026-08-25",
+        "venue": "Seminar Hall",
+        "description": "Learn about the latest technologies, industry trends and career opportunities from experienced professionals."
+    },
+    {
+        "name": "🏆 Coding Competition",
+        "category": "Technical",
+        "date": "2026-09-02",
+        "venue": "Programming Lab",
+        "description": "Test your programming and problem-solving skills by participating in an exciting coding competition."
+    },
+    {
+        "name": "🎭 Cultural Fest",
+        "category": "Cultural",
+        "date": "2026-09-10",
+        "venue": "Main Auditorium",
+        "description": "Enjoy various cultural performances, competitions and activities."
+    },
+    {
+        "name": "🏏 Cricket Tournament",
+        "category": "Sports",
+        "date": "2026-09-15",
+        "venue": "University Ground",
+        "description": "Participate in an exciting cricket tournament and compete with other teams."
+    },
+    {
+        "name": "🤖 Robotics Workshop",
+        "category": "Workshop",
+        "date": "2026-09-20",
+        "venue": "Robotics Lab",
+        "description": "Learn the basics of robotics, automation and robot programming."
+    },
+    {
+        "name": "💃 Dance Competition",
+        "category": "Cultural",
+        "date": "2026-09-25",
+        "venue": "Open Ground",
+        "description": "Show your dancing skills and participate in the college dance competition."
+    },
+    {
+        "name": "🌐 Web Development Workshop",
+        "category": "Workshop",
+        "date": "2026-09-28",
+        "venue": "Computer Lab",
+        "description": "Learn HTML, CSS, JavaScript and modern web development techniques."
+    },
+    {
+        "name": "⚽ Football Tournament",
+        "category": "Sports",
+        "date": "2026-10-02",
+        "venue": "Sports Ground",
+        "description": "Participate in the inter-college football tournament."
+    },
+    {
+        "name": "🤖 AI Seminar",
+        "category": "Technical",
+        "date": "2026-10-05",
+        "venue": "CSPIT Auditorium",
+        "description": "Learn about Artificial Intelligence, Machine Learning and their applications."
+    },
+    {
+        "name": "📸 Photography Contest",
+        "category": "Cultural",
+        "date": "2026-10-10",
+        "venue": "College Campus",
+        "description": "Capture creative photographs and participate in the college photography contest."
+    },
+    {
+        "name": "🔐 Cyber Security Workshop",
+        "category": "Workshop",
+        "date": "2026-10-14",
+        "venue": "Computer Lab",
+        "description": "Learn basic cyber security concepts, online safety and security practices."
+    },
+    {
+        "name": "🧠 Tech Quiz",
+        "category": "Technical",
+        "date": "2026-10-22",
+        "venue": "Seminar Hall",
+        "description": "Test your knowledge of technology, computers and current technical trends."
+    },
+    {
+        "name": "🎵 Music Night",
+        "category": "Cultural",
+        "date": "2026-10-25",
+        "venue": "Main Auditorium",
+        "description": "Enjoy an evening of music and performances by talented students."
+    },
+    {
+        "name": "💻 JavaScript Workshop",
+        "category": "Workshop",
+        "date": "2026-10-30",
+        "venue": "Computer Lab",
+        "description": "Learn JavaScript basics, DOM manipulation and interactive web development."
+    }
+]
