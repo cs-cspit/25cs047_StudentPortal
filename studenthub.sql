@@ -60,10 +60,13 @@ CREATE TABLE `students` (
   `address` VARCHAR(255) DEFAULT 'CHARUSAT Campus, Changa',
   `message` TEXT DEFAULT NULL,
   `status` ENUM('active', 'inactive', 'archived') DEFAULT 'active',
+  `is_deleted` TINYINT(1) DEFAULT 0,
+  `phone` VARCHAR(20) AS (mobile) VIRTUAL,
   `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   INDEX (`email`),
   INDEX (`course`),
-  INDEX (`status`)
+  INDEX (`status`),
+  INDEX (`is_deleted`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------

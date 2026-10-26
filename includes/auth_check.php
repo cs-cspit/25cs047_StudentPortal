@@ -76,4 +76,28 @@ function require_role($allowed_roles = ['admin']) {
         </div>");
     }
 }
+
+function require_admin() {
+    require_role(['admin']);
+}
+
+function require_editor() {
+    require_role(['admin', 'editor']);
+}
+
+function is_logged_in() {
+    return isset($_SESSION["user_id"]);
+}
+
+function is_admin() {
+    return (($_SESSION["role"] ?? '') === 'admin');
+}
+
+function current_user_id() {
+    return (int)($_SESSION["user_id"] ?? 0);
+}
+
+function current_user_role() {
+    return $_SESSION["role"] ?? 'guest';
+}
 ?>

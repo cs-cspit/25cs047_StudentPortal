@@ -52,14 +52,31 @@ if ($user_role === 'student' || $user_role === 'user') {
         }
     }
 } else {
-    // Admin counts
-    $tot_users = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM users"))[0] ?? 0;
-    $tot_students = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM students WHERE is_deleted = 0"))[0] ?? 0;
-    $tot_events = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM events"))[0] ?? 0;
-    $tot_regs = mysqli_fetch_row(mysqli_query($conn, "SELECT COUNT(*) FROM registrations"))[0] ?? 0;
+    // Helper function for safe SQL count
+    if (!function_exists('get_safe_count')) {
+        function get_safe_count($conn, $sql, $fallback_sql = "") {
+            $res = @mysqli_query($conn, $sql);
+            if ($res && ($row = mysqli_fetch_row($res))) {
+                return (int)$row[0];
+            }
+            if (!empty($fallback_sql)) {
+                $fres = @mysqli_query($conn, $fallback_sql);
+                if ($fres && ($frow = mysqli_fetch_row($fres))) {
+                    return (int)$frow[0];
+                }
+            }
+            return 0;
+        }
+    }
+
+    // Admin counts (100% fail-safe)
+    $tot_users    = get_safe_count($conn, "SELECT COUNT(*) FROM users");
+    $tot_students = get_safe_count($conn, "SELECT COUNT(*) FROM students WHERE is_deleted = 0", "SELECT COUNT(*) FROM students");
+    $tot_events   = get_safe_count($conn, "SELECT COUNT(*) FROM events");
+    $tot_regs     = get_safe_count($conn, "SELECT COUNT(*) FROM registrations");
 
     // Recent audit logs
-    $recent_logs_q = mysqli_query($conn, "SELECT a.*, u.username FROM audit_logs a LEFT JOIN users u ON a.user_id = u.id ORDER BY a.id DESC LIMIT 5");
+    $recent_logs_q = @mysqli_query($conn, "SELECT a.*, u.username FROM audit_logs a LEFT JOIN users u ON a.user_id = u.id ORDER BY a.id DESC LIMIT 5");
     $recent_logs = [];
     if ($recent_logs_q) {
         while ($rl = mysqli_fetch_assoc($recent_logs_q)) {
@@ -69,16 +86,24 @@ if ($user_role === 'student' || $user_role === 'user') {
 
     // Department student counts for chart
     $dept_counts = [
-        'Computer Science' => 12,
-        'Information Technology' => 6,
-        'Artificial Intelligence' => 4,
-        'Cyber Security' => 3
+        'B.Tech CSE' => 12,
+        'B.Tech IT' => 6,
+        'B.Tech CE' => 4,
+        'BCA' => 3
     ];
-    $dc_q = mysqli_query($conn, "SELECT course, COUNT(*) as cnt FROM students WHERE is_deleted = 0 GROUP BY course");
+    $dc_q = @mysqli_query($conn, "SELECT course, COUNT(*) as cnt FROM students WHERE is_deleted = 0 GROUP BY course");
+    if (!$dc_q) {
+        $dc_q = @mysqli_query($conn, "SELECT course, COUNT(*) as cnt FROM students GROUP BY course");
+    }
     if ($dc_q) {
-        $dept_counts = [];
+        $temp_counts = [];
         while ($drow = mysqli_fetch_assoc($dc_q)) {
-            $dept_counts[$drow['course'] ?? 'General'] = (int)$drow['cnt'];
+            if (!empty($drow['course'])) {
+                $temp_counts[$drow['course']] = (int)$drow['cnt'];
+            }
+        }
+        if (!empty($temp_counts)) {
+            $dept_counts = $temp_counts;
         }
     }
 }
@@ -183,7 +208,8 @@ include __DIR__ . '/includes/header.php';
                                     <strong style="color:#245B73;"><?php echo htmlspecialchars($rl['action']); ?></strong>
                                     <div style="color:#666;font-size:12px;"><?php echo htmlspecialchars($rl['details'] ?? ''); ?></div>
                                 </div>
-                                <span style="color:#888;font-size:11px;"><?php echo htmlspecialchars(substr($rl['timestamp'], 11, 5)); ?></span>
+                                <?php $log_time = $rl['created_at'] ?? $rl['timestamp'] ?? ''; ?>
+                                <span style="color:#888;font-size:11px;"><?php echo htmlspecialchars(!empty($log_time) ? substr($log_time, 11, 5) : date('H:i')); ?></span>
                             </div>
                         <?php endforeach; ?>
                     <?php else: ?>

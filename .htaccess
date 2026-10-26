@@ -1,0 +1,26 @@
+# StudentHub Apache Configuration
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect .html requests to unified .php portal equivalents
+    RewriteRule ^index\.html$ index.php [R=301,L,QSA]
+    RewriteRule ^login\.html$ login.php [R=301,L,QSA]
+    RewriteRule ^registration\.html$ registration.php [R=301,L,QSA]
+    RewriteRule ^dashboard\.html$ dashboard.php [R=301,L,QSA]
+    RewriteRule ^events\.html$ events.php [R=301,L,QSA]
+    RewriteRule ^students\.html$ students.php [R=301,L,QSA]
+    RewriteRule ^about\.html$ about.php [R=301,L,QSA]
+    RewriteRule ^contact\.html$ contact.php [R=301,L,QSA]
+    RewriteRule ^announcement\.html$ announcement.php [R=301,L,QSA]
+    RewriteRule ^assignment\.html$ assignment.php [R=301,L,QSA]
+    RewriteRule ^attendence\.html$ attendance.php [R=301,L,QSA]
+    RewriteRule ^feedback\.html$ feedback.php [R=301,L,QSA]
+    RewriteRule ^fees\.html$ fees.php [R=301,L,QSA]
+    RewriteRule ^profile\.html$ profile.php [R=301,L,QSA]
+    RewriteRule ^result\.html$ result.php [R=301,L,QSA]
+    RewriteRule ^timetable\.html$ timetable.php [R=301,L,QSA]
+    RewriteRule ^FQA\.html$ faq.php [R=301,L,QSA]
+    RewriteRule ^faq\.html$ faq.php [R=301,L,QSA]
+</IfModule>

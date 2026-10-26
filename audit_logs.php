@@ -132,7 +132,7 @@ include __DIR__ . '/includes/header.php';
                         <?php while ($l = mysqli_fetch_assoc($logs)): ?>
                             <tr style="border-bottom:1px solid #E1EDF2;">
                                 <td style="padding:10px;font-weight:bold;color:#245B73;"><?php echo $l['id']; ?></td>
-                                <td style="padding:10px;color:#555;white-space:nowrap;"><?php echo htmlspecialchars($l['timestamp']); ?></td>
+                                <td style="padding:10px;color:#555;white-space:nowrap;"><?php echo htmlspecialchars($l['created_at'] ?? $l['timestamp'] ?? ''); ?></td>
                                 <td style="padding:10px;font-weight:600;">
                                     <?php echo htmlspecialchars($l['username'] ?? ('User #' . $l['user_id'])); ?>
                                 </td>
