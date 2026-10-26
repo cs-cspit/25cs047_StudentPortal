@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "category": "General",
+    "question": "What is Student Hub and what services does it offer?",
+    "answer": "Student Hub is a centralized academic management portal designed for CSPIT/CHARUSAT students to manage profiles, track attendance, check timetables, submit assignments, view exam results, and register for campus events."
+  },
+  {
+    "id": 2,
+    "category": "Account",
+    "question": "How do I log in to my Student Hub account?",
+    "answer": "Click on the Login button in the top navigation bar, enter your registered email address or student username and password, and submit. You will be redirected to your dashboard."
+  },
+  {
+    "id": 3,
+    "category": "Account",
+    "question": "What should I do if I forget my password?",
+    "answer": "Contact the CSPIT IT administrator or mentor with your Student ID and registration email to have your password securely reset."
+  },
+  {
+    "id": 4,
+    "category": "Academic",
+    "question": "How can I check my subject-wise attendance percentage?",
+    "answer": "After logging in, navigate to the Attendance module from your Dashboard. You will see a detailed breakdown of lectures conducted, lectures attended, and your overall percentage."
+  },
+  {
+    "id": 5,
+    "category": "Academic",
+    "question": "Where can I view my weekly lecture and lab timetable?",
+    "answer": "Click on Timetable in your dashboard or navigation bar. You can view the weekly schedule day-by-day along with room allocations and faculty names."
+  },
+  {
+    "id": 6,
+    "category": "Academic",
+    "question": "How do I access and submit assignments?",
+    "answer": "Visit the Assignments tab to check active deadlines, subject requirements, maximum marks, and current evaluation status."
+  },
+  {
+    "id": 7,
+    "category": "Examinations",
+    "question": "When are semester examination results published?",
+    "answer": "Examination results are published approximately 3 to 4 weeks after the conclusion of semester end-examinations. You can view SGPA, CGPA, and grade cards in the Results module."
+  },
+  {
+    "id": 8,
+    "category": "Events",
+    "question": "How can I register for campus hackathons and workshops?",
+    "answer": "Go to the Campus Events page, browse the list of technical, cultural, or sports events, click on View Details, and click 'Register Now'."
+  },
+  {
+    "id": 9,
+    "category": "Finance",
+    "question": "How do I check my semester fee payment status?",
+    "answer": "Open the Fees & Dues section from your dashboard to view payment history, due amounts, transaction IDs, and download fee receipts."
+  },
+  {
+    "id": 10,
+    "category": "Feedback",
+    "question": "How can I submit anonymous feedback about course delivery?",
+    "answer": "Navigate to the Feedback page, select your course category, provide a star rating from 1 to 5, write your feedback comments, and submit."
+  },
+  {
+    "id": 11,
+    "category": "Technical",
+    "question": "How does the Dark / Light theme toggle work?",
+    "answer": "Click the theme button in the top right header. Your preference is automatically stored in browser localStorage and restored every time you return."
+  },
+  {
+    "id": 12,
+    "category": "Security",
+    "question": "Why does my session log out automatically after inactivity?",
+    "answer": "For security compliance, inactive sessions automatically expire after 5 minutes to prevent unauthorized access on shared campus laboratory computers."
+  },
+  {
+    "id": 13,
+    "category": "Security",
+    "question": "What is the Remember-Me feature?",
+    "answer": "Checking 'Remember Me' securely stores an authentication token on your personal browser so you do not need to re-type credentials repeatedly."
+  },
+  {
+    "id": 14,
+    "category": "Administration",
+    "question": "What roles are supported in Student Hub?",
+    "answer": "Student Hub supports three primary roles: Student (access personal academics and events), Editor (manage students and events), and Admin (complete portal moderation, dynamic menu, and audit logging)."
+  },
+  {
+    "id": 15,
+    "category": "Contact",
+    "question": "Who can I contact for technical portal assistance?",
+    "answer": "You can fill out the form on the Contact Us page or visit the CSPIT Computer Engineering Department office during working hours (9 AM - 4 PM)."
+  }
+]
