@@ -377,10 +377,9 @@ StudentHub/
 
 ---
 
-## 📚 Examination & Viva Resources
+## 📚 Review Resources
 
-For oral examination preparation, architectural review, and security audit scoring:
-- **Viva Exam Questions &amp; Answers (20 Q&amp;As)**: [`docs/viva_questions_answers.md`](docs/viva_questions_answers.md)
+For architectural review, and security audit scoring:
 - **Security &amp; Accessibility Checklist**: [`docs/security_accessibility_checklist.md`](docs/security_accessibility_checklist.md)
 - **Apache VirtualHost Configuration Guide**: [`docs/virtual_host_guide.md`](docs/virtual_host_guide.md)
 
